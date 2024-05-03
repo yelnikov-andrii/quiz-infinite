@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import questionsJson from './question.json'
+import questionsJson from './question.json';
+import questionsruJson from './questionsru.json';
 
 function App() {
   const [questions, setQuestions] = useState<any[]>([]);
@@ -9,7 +10,7 @@ function App() {
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 
   useEffect(() => {
-    setQuestions(questionsJson)
+    setQuestions(questionsruJson)
   }, []);
 
   const handleAnswer = (selectedOption: string) => {
@@ -20,6 +21,10 @@ function App() {
     } else {
       setCorrectAnswer(null);
     }
+  
+    setTimeout(() => {
+      resetQuestion();
+    }, 2500); 
   };
 
   const resetQuestion = () => {
@@ -33,11 +38,11 @@ function App() {
     setCorrectAnswer(null);
   };
 
+  console.log(questions?.length)
+
   return (
     <div className="container">
-      <h1>Питання:</h1>
-      <p>{questions[currentQuestionIndex]?.question}</p>
-      <h2>Варіанти відповідей:</h2>
+      <p className='question'>{questions[currentQuestionIndex]?.question}</p>
       <div className="options">
         {currentQuestionIndex >= 0 && questions.length > 0 && ['A', 'B', 'C', 'D'].map((option) => (
           <button
@@ -49,11 +54,6 @@ function App() {
           </button>
         ))}
       </div>
-      {selectedAnswer && (
-        <div className="result">
-          <button onClick={resetQuestion}>Наступне питання</button>
-        </div>
-      )}
     </div>
   );
 }

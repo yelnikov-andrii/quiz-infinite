@@ -1,6 +1,7 @@
 #root {
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -10,17 +11,17 @@ body {
 
 .container {
     text-align: center;
-    background-color: darkgreen;
+    background-color: teal;
     padding: 50px 0 200px;
+    height: 100vh;
   }
 
   .question {
     color: white;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 500;
     max-width: 600px;
     margin: 0 auto;
-    font-family: 'serif';
   }
   
   .options {
@@ -41,6 +42,8 @@ body {
     width: 100%;
     font-size: 18px;
     text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.1);
+    color: white;
   }
   
   .option-button.selected {
@@ -48,7 +51,7 @@ body {
   }
   
   .option-button.correct {
-    background-color: #aaf0aa;
+    background-color: darkgreen;
   }
   
   .option-button.incorrect {

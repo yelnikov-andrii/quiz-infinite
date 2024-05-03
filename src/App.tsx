@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import questionsJson from './question.json';
+// import questionsJson from './question.json';
 import questionsruJson from './questionsru.json';
 
 function App() {

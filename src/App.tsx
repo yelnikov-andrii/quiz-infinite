@@ -24,7 +24,7 @@ function App() {
   
     setTimeout(() => {
       resetQuestion();
-    }, 2500); 
+    }, 800); 
   };
 
   const resetQuestion = () => {

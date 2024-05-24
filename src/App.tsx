@@ -59,9 +59,6 @@ function App() {
             {questions[currentQuestionIndex][option]}
           </button>
         ))}
-        <div>
-          {currentQuestionIndex}
-        </div>
       </div>
     </div>
   );

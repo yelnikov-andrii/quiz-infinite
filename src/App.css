@@ -38,7 +38,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     max-width: 400px;
-    height: 60px;
+    min-height: 60px;
     width: 100%;
     font-size: 18px;
     background: rgba(0, 0, 0, 0.1);

@@ -27,16 +27,22 @@ function App() {
     }, 800); 
   };
 
+  let randomIndex;
+
   const resetQuestion = () => {
-    let randomIndex;
     do {
       randomIndex = Math.floor(Math.random() * questions.length);
     } while (randomIndex === currentQuestionIndex);
 
     setCurrentQuestionIndex(randomIndex);
+    // setCurrentQuestionIndex(prev => prev + 1);
     setSelectedAnswer(null);
     setCorrectAnswer(null);
   };
+
+  useEffect(() => {
+    randomIndex = Math.floor(Math.random() * questions.length);
+  }, [questions]);
 
   console.log(questions?.length)
 
@@ -53,6 +59,9 @@ function App() {
             {questions[currentQuestionIndex][option]}
           </button>
         ))}
+        <div>
+          {currentQuestionIndex}
+        </div>
       </div>
     </div>
   );
